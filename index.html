@@ -1,39 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taei's Site</title>
+
     <style>
-      body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
-      header { padding: 24px; border-bottom: 2px solid #000; }
-      main { padding: 24px; max-width: 900px; }
-      .card { border: 2px solid #000; border-radius: 14px; padding: 16px; margin: 16px 0; }
-      a { color: inherit; }
-      button { padding: 10px 14px; font-size: 16px; cursor: pointer; }
-      footer { padding: 24px; border-top: 2px solid #000; margin-top: 24px; }
-      .row { display: flex; gap: 16px; flex-wrap: wrap; }
-      .row .card { flex: 1; min-width: 240px; }
+      /* ===== Base ===== */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== Layout ===== */
+      header {
+        padding: 24px;
+        border-bottom: 2px solid #000;
+      }
+
+      main {
+        padding: 24px;
+        max-width: 900px;
+        margin: 0 auto; /* centers the content */
+      }
+
+      footer {
+        padding: 24px;
+        border-top: 2px solid #000;
+        margin-top: 24px;
+      }
+
+      .row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .row .card {
+        flex: 1;
+        min-width: 240px;
+      }
+
+      /* ===== Cards ===== */
+      .card {
+        border: 2px solid #000;
+        border-radius: 14px;
+        padding: 16px;
+        margin: 16px 0;
+
+        /* hover animation */
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* ===== Buttons ===== */
+      button {
+        padding: 10px 14px;
+        font-size: 16px;
+        cursor: pointer;
+
+        transition: transform 0.15s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      /* ===== Small text tweaks ===== */
+      .subtitle {
+        margin-top: 8px;
+        margin-bottom: 0;
+      }
+
+      .strike {
+        margin-top: 8px;
+      }
     </style>
   </head>
+
   <body>
+    <!-- ===== Header ===== -->
     <header>
       <h1>Taei's Site</h1>
-      <p>Learning HTML and building cool stuff.<br><br></p>
-      <p><s>I AM A HTML DEVELOPER</s></p>
+      <p class="subtitle">Learning HTML and building cool stuff.</p>
+      <p class="strike"><s>I AM A HTML DEVELOPER</s></p>
     </header>
 
+    <!-- ===== Main Content ===== -->
     <main>
       <div class="row">
+        <!-- About Card -->
         <div class="card">
           <h2>About</h2>
           <p>
             Hi, I’m Taei. This is my website on GitHub Pages.
             I like coding and I’m learning web dev.
-            I also do unity and c and python.
+            I also do Unity and C and Python.
           </p>
         </div>
 
+        <!-- Links Card -->
         <div class="card">
           <h2>Links</h2>
           <ul>
@@ -49,24 +133,48 @@
             </li>
             <li>
               <a href="https://www.youtube.com/@BoyCoder845/featured" target="_blank" rel="noopener">
-                Youtube
+                YouTube
+              </a>
+            </li>
+            <li>
+              <a href="https://itch.io/profile/boycoder" target="_blank" rel="noopener">
+                Itch.io
               </a>
             </li>
           </ul>
         </div>
       </div>
 
+      <!-- Mini Interaction Card -->
       <div class="card">
         <h2>Mini interaction</h2>
         <p id="status">Click the button.</p>
         <button id="btn">Click me</button>
       </div>
+      
+      <h1>What ive been working on</h1>
+      
+      <!-- What ive been working on Card-->
+      <div class="card">
+        <h2>Spleef</h2>
+        <p>
+            A fragile arena where every block can disappear beneath your feet.
+            Based on the minigame from Minecraft.
+            Made with roblox studio in 7 days.
+            Lot of fun to play with friends.
+        </p>
+        <a href="https://www.roblox.com/games/84965896496553/Spleef" target="_blank" rel="noopener">
+          TheGame
+        </a>
+      </div>
     </main>
 
+    <!-- ===== Footer ===== -->
     <footer>
       <p>© <span id="year"></span> Taei</p>
     </footer>
 
+    <!-- ===== JavaScript ===== -->
     <script>
       const statusEl = document.getElementById("status");
       const btn = document.getElementById("btn");
