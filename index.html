@@ -5,26 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taei's Site</title>
     <style>
-      body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-      .box { max-width: 700px; padding: 20px; border: 2px solid #000; border-radius: 12px; }
+      body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+      header { padding: 24px; border-bottom: 2px solid #000; }
+      main { padding: 24px; max-width: 900px; }
+      .card { border: 2px solid #000; border-radius: 14px; padding: 16px; margin: 16px 0; }
+      a { color: inherit; }
       button { padding: 10px 14px; font-size: 16px; cursor: pointer; }
+      footer { padding: 24px; border-top: 2px solid #000; margin-top: 24px; }
+      .row { display: flex; gap: 16px; flex-wrap: wrap; }
+      .row .card { flex: 1; min-width: 240px; }
     </style>
   </head>
   <body>
-    <div class="box">
-      <h1>Hi, I'm Taei</h1>
-      <p>This is my first website hosted on GitHub Pages.</p>
+    <header>
+      <h1>Taei's Site</h1>
+      <p>Learning HTML and building cool stuff.<br><br></p>
+      <p><s>I AM A HTML DEVELOPER</s></p>
+    </header>
 
-      <h2>Links</h2>
-      <ul>
-        <li><a href="https://github.com/supertaei" target="_blank">My GitHub</a></li>
-      </ul>
+    <main>
+      <div class="row">
+        <div class="card">
+          <h2>About</h2>
+          <p>
+            Hi, I’m Taei. This is my website on GitHub Pages.
+            I like coding and I’m learning web dev.
+            I also do unity and c and python.
+          </p>
+        </div>
 
-      <h2>Button test</h2>
-      <p id="msg">Click the button.</p>
-      <button onclick="document.getElementById('msg').textContent='Button works!'">
-        Click me
-      </button>
-    </div>
+        <div class="card">
+          <h2>Links</h2>
+          <ul>
+            <li>
+              <a href="https://github.com/supertaei" target="_blank" rel="noopener">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://discord.gg/HEssQwMc" target="_blank" rel="noopener">
+                Discord
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@BoyCoder845/featured" target="_blank" rel="noopener">
+                Youtube
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Mini interaction</h2>
+        <p id="status">Click the button.</p>
+        <button id="btn">Click me</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Taei</p>
+    </footer>
+
+    <script>
+      const statusEl = document.getElementById("status");
+      const btn = document.getElementById("btn");
+      const yearEl = document.getElementById("year");
+
+      let clicks = 0;
+
+      btn.addEventListener("click", () => {
+        clicks++;
+        statusEl.textContent = `Clicks: ${clicks}`;
+      });
+
+      yearEl.textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
